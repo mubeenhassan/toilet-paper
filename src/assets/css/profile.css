@@ -1,0 +1,166 @@
+
+.profile-container {
+width: 80%;
+margin: auto;
+background-size: 100px;
+padding-top: 100px;
+position: relative;
+}
+
+.profile-header {
+width: 100%;
+display: flex;
+flex-direction: column;
+padding: 15px;
+background-size: 100%;
+z-index: -1;
+height: 200px;
+background-repeat: no-repeat;
+}
+
+.upper-header {
+display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+margin-top: -35px;
+}
+
+.setting-img {
+width: 100px;
+height: 100px;
+}
+
+.setting-img img {
+width: 100%;
+}
+
+.profile-bil p{
+font-size: 45px;
+text-shadow: 5px 5px #161616;
+font-weight: 900;
+font-family: cursive;
+}
+.value {
+width: 100%;
+text-align: center;
+font-size: 30px;
+font-family: cursive;
+font-weight: 600;
+margin-top: -12px;
+color: #2de52d;;
+}
+
+.main-container {
+width: 600px;
+position: relative;
+background-repeat: no-repeat;
+background-size: cover;
+background: round;
+margin: auto;
+padding-bottom: 20px;
+}
+
+.logo-flag {
+display: flex;
+justify-content: space-between;
+align-items: start; 
+padding: 30px;
+}
+
+.pilz-logo {
+width: 10rem;
+height: 10rem;
+}
+
+.english {
+width: 5rem;
+height: 5rem;
+border: solid 5px black;
+border-radius: 20px;
+}
+
+.plz-heading h1{
+font-size: 4rem;
+font-weight: bold;
+margin: 0;
+text-decoration: underline;
+}
+
+.plz-heading img {
+width: 4rem;
+}
+
+.statistics-section {
+max-width: 530px;
+font-family: sans-serif;
+margin: auto;
+}
+
+.achievements-section h2,
+.statistics-section h2{
+width: 100%;
+font-size: 2rem;
+text-decoration: underline;
+} 
+
+.statistics-list p{
+width: 100%;
+background: #0c3954;
+padding: 12px;
+border-radius: 11px;
+margin-bottom: -10px;
+font-size: 18px;
+font-weight: 700;
+}
+
+.achievements-section {
+max-width: 530px;
+margin: 20px auto;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.img-contain {
+position: relative;
+margin: auto;
+}
+
+.img-contain img {
+width: 5rem;
+}
+
+.img-contain span {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+font-size: 3rem;
+font-weight: bold;
+}
+
+.achieve-box {
+display: flex;
+width: 150px;
+height: 200px;
+background: #0c3954;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+}
+
+.achieve-box p {
+font-size: 26px;
+font-weight: bold;
+}
+
+.skin-box {
+display: flex;
+width: 150px;
+height: 150px;
+background: #0c3954;
+flex-direction: column;
+align-items: center;
+margin-bottom: 20px;
+}

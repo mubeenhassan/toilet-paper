@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
 import '../../assets/css/layout.css'
+import { useEffect, useState } from "react"
 
-const Header = () => {
+const Header = (props) => {
+  console.log(props.navbarBg)
   return (
-    <nav>
+    <nav className= {`header-bg ${props.navbarBg ? "nav-bg" : ""}`} >
       <div className='logo-container'>
         <Link to='/'>
           <img src={logo} alt='' />
@@ -14,10 +16,10 @@ const Header = () => {
         <li>
           <Link to='/login'>Login</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to='/register'>Register</Link>
         </li>
-        {/* <li className='profile'>
+        <li className='profile'>
           <Link to='/profile'>Profile</Link>
         </li>
         <li className='logout'>
