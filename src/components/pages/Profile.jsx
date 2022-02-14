@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react"
 
 import pilzschafLogo from "../../assets/images/pilzschaf_channel_button.png";
 import profileBatch from "../../assets/images/profile_dev_batch.png";
@@ -6,6 +7,7 @@ import frame from "../../assets/images/general_frame_background.png";
 import english from "../../assets/images/english.png";
 import flyCele from "../../assets/images/flying_toiletpaper_celebration.png";
 import tCrystal from "../../assets/images/toiletpaper_crystal_pink.png";
+import { useNavigate } from "react-router-dom"
 
 import "../../assets/css/profile.css"
 const ACHIEVEMENTS = [
@@ -48,8 +50,13 @@ const LEGENDARYSKINS = [
     no: "3",
   },
 ];
-export default function Profile() {
-
+export default function Profile(isAuth) {
+  const navigate = useNavigate()
+  useEffect(() => {
+    if(!(isAuth === null)){
+       navigate("/login")}
+    console.log("is pro", isAuth === null)
+  })
 
   return (
     <div
