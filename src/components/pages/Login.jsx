@@ -1,22 +1,25 @@
 import { Link } from "react-router-dom"
 import "../../assets/css/loginRegister.css"
-import { SuccessToast, FailedToast } from "../Toast"
-import { ToastContainer, toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
+import { useNavigate } from "react-router-dom"
+
 import { useEffect, useState } from "react"
 import TextInput from "../layout/TextInput"
-import { LoginAPI} from '../api/actions'
-import axios from "axios"
+import { LoginAPI } from "../api/actions"
 
-const Login = () => {
-  const [success, setSuccess] = useState(false)
+const Login = (isAuth) => {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
-  
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if((isAuth == null)){
+      navigate("/profile")
+    console.log("is login", isAuth)
+  }})
+
   function Logina() {
-    setSuccess(!success)
-    LoginAPI()
-    success ? SuccessToast() : FailedToast()
+    LoginAPI(username, password)
+   navigate("/profile")
 
   }
   return (
@@ -42,7 +45,6 @@ const Login = () => {
       <button className="login-register-btn" onClick={Logina}>
         Login
       </button>
-      <ToastContainer />
     </section>
   )
 }

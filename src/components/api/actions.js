@@ -1,26 +1,26 @@
-import axios from "axios";
-import { useState } from "react";
-import qs from "qs";   
+import axios from "axios"
+import qs from "qs"
+import "react-toastify/dist/ReactToastify.css"
 
-const baseURL = "https://toiletpapertycoon.com:8080/paperAmountSurvey/ranking?limit=100";
+const baseURL = "https://toiletpapertycoon.com:8080/"
 
-export const LoginAPI=async(data)=>{
+export const LoginAPI = async (username, password) => {
   let datas = {
-    username: "TestTest",
-    password: "1234qwer"
-  };
+    username: username,
+    password: password,
+  }
   let options = {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: qs.stringify(datas),
-    baseURL
-  };
-  axios(options)
-    .then(res => {
-      console.log("yeh we have", res.data);
+    baseURL,
+  }
+  axios(`${baseURL}login`, options)
+    .then((res) => {
+      console.log("yeh we have", res.data.data.tokens.accessToken)
+      localStorage.setItem('accessToken', res.data.data.tokens.accessToken);
     })
-    .catch(er => {
-      console.log("no data sorry ", er);
-    });
+    .catch((er) => {
+      console.log("no data sorry ", er)
+    })
 }
-

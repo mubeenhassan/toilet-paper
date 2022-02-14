@@ -1,30 +1,32 @@
-import { Link } from 'react-router-dom'
-import logo from '../../assets/images/logo.png'
-import '../../assets/css/layout.css'
-import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import logo from "../../assets/images/logo.png"
+import "../../assets/css/layout.css"
+import { useNavigate } from "react-router-dom"
 
 const Header = (props) => {
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken")
+   if(props.isAuth !=null)
+    navigate("/")
+  }
   console.log(props.navbarBg)
   return (
-    <nav className= {`header-bg ${props.navbarBg ? "nav-bg" : ""}`} >
-      <div className='logo-container'>
-        <Link to='/'>
-          <img src={logo} alt='' />
+    <nav className={`header-bg ${props.navbarBg ? "nav-bg" : ""}`}>
+      <div className="logo-container">
+        <Link to="/">
+          <img src={logo} alt="" />
         </Link>
       </div>
-      <ul className='links-container'>
+      <ul className="links-container">
         <li>
-          <Link to='/login'>Login</Link>
+          {props.isAuth != null ? (
+            <button onClick={handleLogout}>logout</button>
+          ) : (
+            <Link to="/login">Login</Link>
+          )}
         </li>
-        {/* <li>
-          <Link to='/register'>Register</Link>
-        </li>
-        <li className='profile'>
-          <Link to='/profile'>Profile</Link>
-        </li>
-        <li className='logout'>
-          <a>Logout</a>
-        </li> */}
       </ul>
     </nav>
   )
