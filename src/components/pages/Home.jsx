@@ -1,7 +1,27 @@
 import "../../assets/css/home.css"
 import arrowImage from "../../assets/images/arrow.png"
+import chart from "../../assets/images/chart.png"
 import ContentCard from "../layout/ContentCard"
-
+import { GlobalRanking } from "../layout/GlobalStatisticsRanking"
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  ReferenceLine,
+  ReferenceArea,
+  ReferenceDot,
+  Tooltip,
+  CartesianGrid,
+  Legend,
+  Brush,
+  ErrorBar,
+  AreaChart,
+  Area,
+  Label,
+  LabelList,
+} from "recharts"
 import Social from "../layout/Social"
 
 const Klorolle = (
@@ -105,7 +125,22 @@ const GoldenUpgrades = (
     <br />
   </p>
 )
+
+const data = [
+  { name: "Page A", uv: 1000, pv: 2400, amt: 2400, uvError: [75, 20] },
+  { name: "Page B", uv: 300, pv: 4567, amt: 2400, uvError: [90, 40] },
+  { name: "Page C", uv: 280, pv: 1398, amt: 2400, uvError: 40 },
+  { name: "Page D", uv: 200, pv: 9800, amt: 2400, uvError: 20 },
+  { name: "Page E", uv: 278, pv: null, amt: 2400, uvError: 28 },
+  { name: "Page F", uv: 189, pv: 4800, amt: 2400, uvError: [90, 20] },
+  { name: "Page G", uv: 189, pv: 4800, amt: 2400, uvError: [28, 40] },
+  { name: "Page H", uv: 189, pv: 4800, amt: 2400, uvError: 28 },
+  { name: "Page I", uv: 189, pv: 4800, amt: 2400, uvError: 28 },
+  { name: "Page J", uv: 189, pv: 4800, amt: 2400, uvError: [15, 60] },
+]
+
 const Home = (props) => {
+  
   return (
     <div className="container">
       <div className="home-title-sec">
@@ -145,6 +180,20 @@ const Home = (props) => {
         RightText={GoldenUpgrades}
         {...props}
       />
+      <div className="chart-table-container">
+        <div className="chart-contaner">
+          <h3>Global average paper amount</h3>
+          <AreaChart width={500} height={300} data={data}>
+            <XAxis dataKey="uv" />
+            <YAxis dataKey="uv" />
+            <Area type="monotone" dataKey="uv" 
+            strokeWidth={3}
+            stackId="1" stroke="#5DA297" fill="#5da2979e" />
+            <CartesianGrid stroke="white" strokeSolid={8} />
+          </AreaChart>
+        </div>
+        <GlobalRanking />
+      </div>
     </div>
   )
 }

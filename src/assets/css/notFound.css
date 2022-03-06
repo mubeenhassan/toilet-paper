@@ -1,0 +1,50 @@
+.notfound-container {
+ width: 90%;
+ height: 84vh;
+ margin: auto;
+ padding-top: 136px;
+ color: white;
+ position: relative;
+}
+
+.ncontainer {
+ display: flex;
+ width: 100%;
+ position:absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+}
+
+.lefthand-side,
+.righthand-side {
+ width: 50%;
+}
+
+.lefthand-side p {
+ font-size: 1.5rem;
+}
+
+.righthand-side{
+ text-align: center;
+}
+
+.righthand-side span{
+ font-size: 8rem;
+ font-family: monospace;
+ font-weight: bold;
+ display: block;
+ margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+
+ .ncontainer {
+  flex-direction: column;
+ }
+ .lefthand-side,
+ .righthand-side {
+  width: 90%;
+  margin: auto;
+ }
+}

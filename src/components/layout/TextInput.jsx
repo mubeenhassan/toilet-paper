@@ -14,6 +14,8 @@ const TextInput = (props) => {
         {props.labelName ? props.labelName : props.name}
         {props.required ? "*" : ""}
       </label>
+      {props.usernameError && <span className="error-msg">{props.usernameError}</span>}
+      {props.emailError && <span className="error-msg">{props.emailError}</span>}
     </div>
   )
 }

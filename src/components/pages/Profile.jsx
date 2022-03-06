@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react"
 
 import pilzschafLogo from "../../assets/images/pilzschaf_channel_button.png";
 import profileBatch from "../../assets/images/profile_dev_batch.png";
@@ -48,14 +49,31 @@ const LEGENDARYSKINS = [
     no: "3",
   },
 ];
-export default function Profile() {
+export default function Profile(props) {
+  const [items, setItems] = useState([])
 
-
+  useEffect(() => {
+    if(props.isAuth === null){
+      window.location.replace("/login")
+    }
+    if(props.isAuth !== null){
+    fetch(
+      "https://toiletpapertycoon.com:8080/user/getUserByName?username=Moldiy"
+    )
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          setItems(result.data.user)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+  }}, [])
   return (
     <div
       className="profile-container"
     >
-     
       <div
         className="main-container"
         style={{ backgroundImage: `url(${frame})` }}
@@ -71,11 +89,11 @@ export default function Profile() {
         <div className="statistics-section">
           <h2>Statistics:</h2>
           <div className="statistics-list">
-            <p>Account created: 28 December 2021| 5pm</p>
-            <p>Highest paper amount: 58,2 Tri</p>
-            <p>Current paper amount: 38,5 K</p>
-            <p>Paper per click: 15 Mio</p>
-            <p>Mio Paper per second: 36 Mio</p>
+            <p>Account created: {items.userCreated}</p>
+            <p>Highest paper amount:{items.highestPaperAmount} Tri</p>
+            <p>Current paper amount: {items.currentPaperAmount} K</p>
+            <p>Paper per click: {items.paperPerClick} Mio</p>
+            <p>Mio Paper per second: {items.paperPerSecond} Mio</p>
           </div>
         </div>
         <div className="achievements-section">
