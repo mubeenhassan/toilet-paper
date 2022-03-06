@@ -8,6 +8,10 @@
   padding-top: 36vh; 
 }
 
+.app-container {
+  background-attachment: fixed;
+}
+
 .social-media-logo {
   width: 3vw;
   margin-left: 0.5vw;
@@ -64,3 +68,120 @@ text-align: center;
   transition: opacity 0.3s;
   pointer-events: none;
 }
+ .chart-table-container {
+  margin: 50px auto;
+  justify-content: space-between;
+  background: white;
+  border-radius: 17px;
+  background-color: #5DA297;
+  box-shadow: 10px 10px;
+  color: #111D1B;
+  box-sizing: border-box;
+  font-family: "Poppins";
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+ }
+
+ .pagination-status {
+   display: flex;
+   justify-content: center;
+ }
+
+ .chart-contaner {
+  width: 65%;
+  box-shadow: 0px -2px 7px 3px #ffff2d;
+  background: white;
+  border-radius: 15px;
+  max-width: 600px;
+  padding: 15px;
+  box-sizing: border-box;
+ }
+
+ .chart-contaner h3 {
+   margin-left: 12px;
+   text-decoration: underline;
+ }
+
+ .recharts-wrapper {
+   width: 100% !important;
+   height: auto !important;
+ }
+
+ .recharts-wrapper svg {
+   width: 100%;
+   height: 100%;
+ }
+
+ .table-container {
+   width: 35%;
+   text-align: center;
+ }
+
+ .table-container table {
+   margin: auto;
+ }
+ .Rtable {
+  width: fit-content;
+  margin: auto;
+  background: #eeeeed;
+  padding: 12px;
+  border-radius: 15px;
+ }
+
+ .Rtable .t-row:nth-child(odd)  {
+  width: fit-content;
+  padding: 10px;
+  background: #cccccc;
+  border-radius: 8px;
+ }
+ .Rtable .t-row:nth-child(even)  {
+  width: fit-content;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 8px;
+ }
+
+ .Rtable .t-row span{
+   padding: 5px;
+ }
+
+ .Rtable p {
+  text-decoration: underline;
+  margin-bottom: 12px;
+ }
+
+ .recharts-cartesian-grid-horizontal line {
+   display: none;
+ }
+
+ .recharts-layer.recharts-line-dots circle {
+   display: none;
+ }
+
+ .recharts-curve.recharts-line-curve {
+   stroke: green;
+   stroke-width: 3;
+ }
+
+ .recharts-cartesian-grid-vertical line {
+   stroke: grey;
+ }
+
+ @media screen and (max-width: 786px) {
+   .chart-table-container {
+     display: flex;
+     flex-direction: column;
+   }
+   
+   .chart-contaner {
+     width: 90%;
+   }
+
+   .table-container {
+     width: 90%;
+     margin-top: 40px;
+   }
+
+ }

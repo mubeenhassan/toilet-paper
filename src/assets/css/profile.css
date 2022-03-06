@@ -52,7 +52,7 @@ color: #2de52d;;
 }
 
 .main-container {
-width: 600px;
+max-width: 600px;
 position: relative;
 background-repeat: no-repeat;
 background-size: cover;
@@ -92,7 +92,7 @@ width: 4rem;
 }
 
 .statistics-section {
-max-width: 530px;
+max-width: 90%;
 font-family: sans-serif;
 margin: auto;
 }
@@ -109,17 +109,17 @@ width: 100%;
 background: #0c3954;
 padding: 12px;
 border-radius: 11px;
-margin-bottom: -10px;
+margin-bottom: 16px;
 font-size: 18px;
 font-weight: 700;
 }
 
 .achievements-section {
-max-width: 530px;
+max-width: 90%;
 margin: 20px auto;
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
+justify-content: space-around;
 }
 
 .img-contain {
@@ -163,4 +163,24 @@ background: #0c3954;
 flex-direction: column;
 align-items: center;
 margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+ .profile-container {
+  width: 95%;
+ }
+ .pilz-logo{
+  width: 7rem;
+  height: 7rem;
+ }
+
+ .plz-heading h1{
+  font-size: 2.5rem;
+ }
+ 
+ .english {
+  width: 4rem;
+  height: 4rem;
+ }
+
 }
