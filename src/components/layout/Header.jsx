@@ -1,17 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from "../../assets/images/logo.png"
 import "../../assets/css/layout.css"
 
 const Header = (props) => {
-
   const handleLogout = () => {
     localStorage.removeItem("accessToken")
-    if (props.isAuth != null) 
-    window.location.replace("/")
+    if (props.isAuth != null) window.location.replace("/")
   }
-  console.log(props.navbarBg)
+  const location = useLocation()
   return (
-    <nav className={`header-bg ${props.navbarBg ? "nav-bg" : ""}`}>
+    <nav className="header-bg">
       <div className="logo-container">
         <Link to="/">
           <img src={logo} alt="" />
@@ -21,6 +19,8 @@ const Header = (props) => {
         <li>
           {props.isAuth != null ? (
             <button onClick={handleLogout}>logout</button>
+          ) : location.pathname === "/login" ? (
+            <Link to="/register">Register</Link>
           ) : (
             <Link to="/login">Login</Link>
           )}

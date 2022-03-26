@@ -87,11 +87,6 @@ nav {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.nav-bg {
-  background-color: #102e2473;
-  transition: all 1s ease-in-out;
-}
-
 .links-container li button{
   background: no-repeat;
   border: none;
