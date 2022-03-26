@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
-  font-family: serif;
-}
+  font-family: 'Open Sans', sans-serif;}
 
 .login-register-content {
   max-width: 450px;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +17,8 @@
   margin: auto;
 }
 .titleLayout__title {
-  font-size: calc(2rem + 9vw);
-  margin: 2rem;
+  font-size: calc(2rem + 7vw);
+    margin: 2rem;
 }
 
 .newuser-link {
@@ -77,8 +77,9 @@
   border-radius: 1rem;
   background-color: transparent;
   color: white;
-  width: calc(6rem + 30vw / 2);
+  width: 50%;
   cursor: pointer;
+  padding-bottom: 10px;
   margin-left: auto;
 }
 .registerEmailVerification {
