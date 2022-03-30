@@ -1,19 +1,17 @@
 import axios from "axios"
 import qs from "qs"
 
-const baseURL = "https://toiletpapertycoon.com:8080/"
+//const baseURL = "https://toiletpapertycoon.com:8080/"
+const baseURL = "http://localhost:8080/"
 
 export const LoginAPI = async (username, password) => {
-  let datas = {
-    username: username,
-    password: password,
-  }
   let options = {
     method: "POST",
     headers: { "content-type": "application/x-www-form-urlencoded" },
-    data: JSON.stringify(datas),
+    data: "username=" + username + "&password=" + password,
     baseURL,
   }
+  console.log(options.data)
   axios(`${baseURL}login`, options)
     .then((res) => {
       console.log("yeh we have", res.data.data.tokens.accessToken)
